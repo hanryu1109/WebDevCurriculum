@@ -68,3 +68,5 @@
   > - Mercurial은 필요하다 싶은 기능 대부분이 이미 번들 확장(Extension)에 포함되어 있습니다.
 - 실리콘밸리의 테크 대기업들은 어떤 형상관리 시스템을 쓰고 있을까요?
   > Git(DVCS), Mercurial(DVCS), Subversion(CVCS), Perforce(CVCS)
+
+git stash 실행 전 remote에서 수정
