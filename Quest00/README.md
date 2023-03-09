@@ -69,4 +69,34 @@
 - 실리콘밸리의 테크 대기업들은 어떤 형상관리 시스템을 쓰고 있을까요?
   > Git(DVCS), Mercurial(DVCS), Subversion(CVCS), Perforce(CVCS)
 
-git stash 실행 전 remote에서 수정
+## Study
+
+버전 관리시스템의 배경
+파일 변화를 시간에 따라 기록했다가 나중에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템입니다.
+
+- 각 파일을 이전 상태로 되돌릴 수 있고
+- 프로젝트를 통째로 되돌릴 수 있고
+- 시간에 따라 수정 내용을 비교가 가능하고
+- 어떤 사람이 했는지 추적이 가능하고
+- 언제 만들었는지 확인이 가능하기 때문에
+
+버전 관리시스템의 종류
+
+- 로컬 버전관리 시스템: RCS
+- 중앙집중식 버전관리 시스템: SVN, CVS, Perforce
+- 분산형 버전관리 시스템: Git, Mercurial, Bazaar
+
+Git이란?
+
+Git이 데이터를 저장하는 방법
+.git 에 어떤 내용이..? 캡쳐 필요?
+
+Git 구성요소 (다른 DVCS와 비교해서)
+
+Git과 Github
+
+Git 주요 명령어
+
+## Self-Feedback
+
+## Question
