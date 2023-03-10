@@ -104,6 +104,8 @@
 - .git/objects 디렉토리 안에 Git이 저장하는 모든 데이터가 있습니다. SHA-1 해시 기반의 객체 데이터 베이스를 이용합니다.
   - git add 이후 .git index(staging area)에 object 이름과(SHA-1 로 만들어진 hash 값) 실제 파일 이름이 추가되고 objects에 Blob 타입으로 저장됩니다.
   - git commit 이후 objects에 Commit 객체와 Tree 객체가 저장됩니다. Tree 객체는 commit 할 때의 index를 스냅샷 찍어서 저장합니다. Commit 객체는 tree 객체 이름과 Author, Date, Message를 저장합니다. 2번째 Commit 객체부터는 parent라고 이전 commit 객체명을 저장합니다.
+  <img width="600" alt="스크린샷 2023-03-10 오후 5 56 28" src="https://user-images.githubusercontent.com/82071500/224272716-5ec1af64-850d-4ba0-adfb-a81d9589f706.png">
+
 - .git/refs 디렉토리 안에 브랜치, 태그 및 기타 참조에 대한 정보가 저장되어 있습니다.
 - .git/config 저장소의 설정 정보가 저장됩니다.
 - .git/branches 에는 모든 브랜치에 대한 정보가 포함됩니다.
