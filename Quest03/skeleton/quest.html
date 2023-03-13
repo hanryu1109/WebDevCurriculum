@@ -71,11 +71,25 @@
       let row1Squares = document.querySelectorAll(".row1 .square");
       for (let node of row1Squares) {
         /* TODO: node 변수를 어떻게 조작해야 할까요? */
+        node.addEventListener("click", () => {
+          if (document.body.bgColor === "") {
+            document.body.bgColor = "yellow";
+          } else {
+            document.body.bgColor = "";
+          }
+        });
       }
 
       let row2Squares = document.querySelectorAll(".row2 .square");
       for (let node of row2Squares) {
         /* TODO: node 변수를 어떻게 조작해야 할까요? */
+        node.addEventListener("click", (event) => {
+          if (event.target.classList.contains("enabled")) {
+            event.target.classList.remove("enabled");
+          } else {
+            event.target.classList.add("enabled");
+          }
+        });
       }
     </script>
   </body>
