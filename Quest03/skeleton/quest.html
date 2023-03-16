@@ -44,15 +44,26 @@
           "별 찍기 프로그램 실행 예정입니다. print 하고 싶은 line 수를 입력해주세요."
         );
 
-        let result = "";
+        let result1 = "";
 
         for (let i = 1; i <= lineNumber; i++) {
-          result += repeatString(" ", lineNumber - i);
-          result += repeatString("*", 2 * i - 1);
-          result += `\n`;
+          result1 += repeatString(" ", lineNumber - i);
+          result1 += repeatString("*", 2 * i - 1);
+          result1 += `\n`;
         }
 
-        console.log(result);
+        console.log(result1);
+
+        // ⬇️⬇️⬇️ + 연산자를 이용하여 string을 추가하면 메모리 이슈 발생하므로 메모리 성능 측면에서 개선한 코드입니다.
+        let result2 = [];
+
+        for (let i = 1; i <= lineNumber; i++) {
+          result2.push(
+            repeatString(" ", lineNumber - i) + repeatString("*", 2 * i - 1)
+          );
+        }
+
+        console.log(result2.join(`\n`));
       };
 
       const repeatString = (string, num) => {
