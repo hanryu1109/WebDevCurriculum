@@ -106,13 +106,13 @@
     <img width="533" alt="스크린샷 2023-03-20 오후 6 40 25" src="https://user-images.githubusercontent.com/82071500/226324101-540eda92-966d-498b-9557-a955b7e331b8.png">
 
   - 그 IP주소들은 어디에 위치해 있나요?
-    121.138.230.5 : 성남시 분당구
-    72.14.243.228 : 미국, 캘리포니아, 마운티뷰 시티
+    > - 121.138.230.5 : 성남시 분당구
+    >   -72.14.243.228 : 미국, 캘리포니아, 마운티뷰 시티
 
 - Wireshark를 통해 www.google.com 으로 요청을 날렸을 떄 어떤 TCP 패킷이 오가는지 확인해 보세요.
 
-  > - Wireshark 툴은 패킷을 캡쳐하고 분석하는 오픈 소스 프로그램입니다.
-  >   <img width="1115" alt="스크린샷 2023-03-20 오후 7 08 33" src="https://user-images.githubusercontent.com/82071500/226323959-78355657-f55c-4cbc-ae95-c5cb646681ef.png">
+  - Wireshark 툴은 패킷을 캡쳐하고 분석하는 오픈 소스 프로그램입니다.
+    <img width="1115" alt="스크린샷 2023-03-20 오후 7 08 33" src="https://user-images.githubusercontent.com/82071500/226323959-78355657-f55c-4cbc-ae95-c5cb646681ef.png">
 
   - TCP 패킷을 주고받는 과정은 어떻게 되나요? > - 먼저 3-Way Hand Shake 과정을 수행합니다.
     > - Client(Source Port) 에서 Server(Destination Port)로 통신을 원한다는 신호를 보냅니다. [SYN] Seq = 0
@@ -135,19 +135,23 @@
 
   - 그 헤더들은 어떤 역할을 하나요?
     > - Date : HTTP 메세지 생성 일자
-    > - Expires : 리소스가 지정된 일시까지 유효함을 나타냄.
+    > - Expires : 리소스가 지정된 일시까지 유효함을 나타냅니다.
     > - Cache-Control : 쿠키/캐시 관련 정보
     > - Content - Type : 미디어 타입 정보
     > - Connection : Server / Client 간의 연결 옵션
     > - Server : 서버의 정보
-    > - X-XSS-Protection : 특정 브라우저에서 제공하는 기능, XSS공격을 감지 할 때 페이지 로드를 중지 시킬 수 있음
-    > - X-Frame-Options : 해당 페이지를 `<frame>` 또는 `<iframe>` , `<object>` 에서 렌더링 할 수 있는지 여부를 나타내는데 사용 됨
-    > - Set-Cookie : 서버측에서 클라이언트측으로부터 세션 쿠기 정보를 설정 함
-    > - Accept-Ranges : 부분 요청에 지원을 알리기 위해 서버에 의해 사용되는 표식. 이 헤더가 존재하면 브라우저는 처음부터 다시 다운로드를 시작하지 않고, 중단된 다운롣를 재개하려고 함.
-    > - Vary : 캐시 된 응답을 향후 요청들에서 오리진 서버로 새로운 요청 헤더를 요청하는 대신 사용할 수 있는지 여부를 결정함.
-    > - Transfer-Encoding : 사용자에게 entity를 안전하게 전송하기 위해 사용하는 인코딩 형식을 지정함.
+    > - X-XSS-Protection : 특정 브라우저에서 제공하는 기능, XSS공격을 감지 할 때 페이지 로드를 중지 시킬 수 있습니다.
+    > - X-Frame-Options : 해당 페이지를 `<frame>` 또는 `<iframe>` , `<object>` 에서 렌더링 할 수 있는지 여부를 나타내는데 사용됩니다.
+    > - Set-Cookie : 서버측에서 클라이언트측으로부터 세션 쿠기 정보를 설정 합니다.
+    > - Accept-Ranges : 부분 요청에 지원을 알리기 위해 서버에 의해 사용되는 표식. 이 헤더가 존재하면 브라우저는 처음부터 다시 다운로드를 시작하지 않고, 중단된 다운롣를 재개하려고 합니다.
+    > - Vary : 캐시 된 응답을 향후 요청들에서 오리진 서버로 새로운 요청 헤더를 요청하는 대신 사용할 수 있는지 여부를 결정합니다.
+    > - Transfer-Encoding : 사용자에게 entity를 안전하게 전송하기 위해 사용하는 인코딩 형식을 지정합니다.
 
 ## Advanced
 
 - HTTP의 최신 버전인 HTTP/3는 어떤 식으로 구성되어 있을까요?
+  > - HTTP/1 및 HTTP/2가 TCP로 통신하는 것과는 달리 HTTP/3는 User Datagram Protocol(UDP, UDP는 세계 통신표준으로 개발된 OSI 모형에서 4번째 계층인 전송 계층(Transport Layer)에서 사용하는 규약) 기반의 QUIC 프로토콜을 사용하여 통신합니다.
 - TCP/IP 외에 전세계적인 네트워크를 구성하기 위한 다른 방식도 제안된 바 있을까요?
+  > - NetBEUI(NetBIOS Extended User Interface): NetBEUI는 IBM에서 개발한 프로토콜로, 이더넷 네트워크를 기반으로 작동합니다. 이 프로토콜은 빠른 전송 속도와 쉬운 구성 등을 제공합니다.
+  > - IPX/SPX: IPX/SPX는 Novell에서 개발한 네트워크 프로토콜입니다. 이 프로토콜은 Novell의 NetWare 운영 체제에서 주로 사용되었습니다.
+  > - 그러나 이러한 프로토콜과 아키텍처는 대부분 현재 사용되지 않거나 특정 분야에서만 사용됩니다. TCP/IP는 다양한 운영 체제와 장비에서 호환성이 높고, 인터넷에 연결된 거의 모든 기기에서 지원되므로, 현재 가장 보편적인 네트워크 프로토콜입니다.
