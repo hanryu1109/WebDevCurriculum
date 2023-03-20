@@ -103,6 +103,7 @@
 - tracert(Windows가 아닌 경우 traceroute) 명령을 통해 www.google.com 까지 가는 경로를 찾아 보세요.
 
   - 어떤 IP주소들이 있나요?
+    <br/>
     <img width="533" alt="스크린샷 2023-03-20 오후 6 40 25" src="https://user-images.githubusercontent.com/82071500/226324101-540eda92-966d-498b-9557-a955b7e331b8.png">
 
   - 그 IP주소들은 어디에 위치해 있나요?
@@ -131,6 +132,7 @@
 - telnet 명령을 통해 http://www.google.com/ URL에 HTTP 요청을 날려 보세요.
 
   - 어떤 헤더들이 있나요?
+    <br/>
     <img width="795" alt="스크린샷 2023-03-20 오후 7 19 07" src="https://user-images.githubusercontent.com/82071500/226322784-c392c1ee-4483-4c20-998f-4bc22ae8a6a3.png">
 
   - 그 헤더들은 어떤 역할을 하나요?
