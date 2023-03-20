@@ -113,13 +113,44 @@
 
 - tracert(Windows가 아닌 경우 traceroute) 명령을 통해 www.google.com 까지 가는 경로를 찾아 보세요.
   - 어떤 IP주소들이 있나요?
+    (사진)
   - 그 IP주소들은 어디에 위치해 있나요?
-- Wireshark를 통해 www.google.com 으로 요청을 날렸을 떄 어떤 TCP 패킷이 오가는지 확인해 보세요
-  - TCP 패킷을 주고받는 과정은 어떻게 되나요?
+    121.138.230.5 : 성남시 분당구
+    72.14.243.228 : 미국, 캘리포니아, 마운티뷰 시티
+- Wireshark를 통해 www.google.com 으로 요청을 날렸을 떄 어떤 TCP 패킷이 오가는지 확인해 보세요.
+
+  > - Wireshark 툴은 패킷을 캡쳐하고 분석하는 오픈 소스 프로그램입니다.
+  >   (사진)
+
+  - TCP 패킷을 주고받는 과정은 어떻게 되나요? > - 먼저 3-Way Hand Shake 과정을 수행합니다.
+    > - Client(Source Port) 에서 Server(Destination Port)로 통신을 원한다는 신호를 보냅니다. [SYN] Seq = 0
+    > - Server에서 SYN을 정상적으로 받았다는 신호를 보냅니다. [SYN, ACK] Seq=0 Ack=1
+    > - Client에서 SYN-ACK를 잘 받았다고 신호를 보냅니다. [ACK] Seq=1 Ack=1
+    > - Client 에서 HTTP 요청을 보냅니다. [GET / HTTP/1.1]
+    > - Server 측에서 확인 신호를 보냅니다.
   - 각각의 패킷에 어떤 정보들이 담겨 있나요?
+    > - Source Port (발신지 포트 필드) : 발신지 포트 필드는 발신지에서 오픈된 포트입니다. 위 포트를 보면 57406 포트인 것을 확인할 수 있습니다.
+    > - Destination Port (목적지 포트 필드) : 목적지 포트 필드는 수신지에서 오픈된 포트입니다. 위의 패킷을 보면 443 포트인 것을 확인할 수 있습니다.
+    > - Sequence Number (순차 번호 필드) : 순차번호필드는 고유한 번호를 가지며, 이 값으로 TCP 세그먼트에 대한 식별값을 제공하며, 통신 스트림일부가 분실되면 확인을 위해 수신자를 사용가능하게 합니다. 이 순차번호는 패킷에 포함되어 있는 데이터 만큼 증가하게 됩니다.
+    > - Acknowledgement Number (확인 응답 번호 필드) : 확인 응답 번호 필드는 다음번에 기대되는 순차번호를 표시합니다. ack number에 관련하여 62 값을 가지게 됩니다.
+
 - telnet 명령을 통해 http://www.google.com/ URL에 HTTP 요청을 날려 보세요.
   - 어떤 헤더들이 있나요?
+    (사진)
   - 그 헤더들은 어떤 역할을 하나요?
+    > - Date : HTTP 메세지 생성 일자
+    > - Connection : Server / Clinet 간의 연결 옵션
+    > - Cache-Control : 쿠키/캐시 관련 정보
+    > - Content - Type : 미디어 타입 정보
+    > - Expires : 리소스가 지정된 일시까지 유효함을 나타냄.
+    > - Server : 서버의 정보
+    > - X-XSS-Protection : 특정 브라우저에서 제공하는 기능, XSS공격을 감지 할 때 페이지 로드를 중지 시킬 수 있음
+    > - X-Frame-Options : 해당 페이지를 `<frame>` 또는 `<iframe>` , `<object>` 에서 렌더링 할 수 있는지 여부를 나타내는데 사용 됨
+    > - Set-Cookie : 서버측에서 클라이언트측으로부터 세션 쿠기 정보를 설정 함
+    > - Accept-Ranges : 부분 요청에 지원을 알리기 위해 서버에 의해 사용되는 표식. 이 헤더가 존재하면 브라우저는 처음부터 다시 다운로드를 시작하지 않고, 중단된 다운롣를 재개하려고 함.
+    > - Vary : 캐시 된 응답을 향후 요청들에서 오리진 서버로 새로운 요청 헤더를 요청하는 대신 사용할 수 있는지 여부를 결정함.
+    > - Tranfer-Encoding : 사용자에게 entitiy를 안전하게 전송하기 위해 사용하는 인코딩 형식을 지정함.
+    > - HTTP 헤더를 분석해야 할 때 알고있으면 매우 유용한 내용입니다.
 
 ## Advanced
 
