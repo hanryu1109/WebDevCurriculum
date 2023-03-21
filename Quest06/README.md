@@ -30,7 +30,7 @@
 
 - 인터넷은 어떻게 동작하나요? Internet Protocol Suite의 레이어 모델에 입각하여 설명해 보세요.
 
-  > - Internet Protocol Suite란 인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약(프로토콜)의 모음입니다. 주로 TCP/IP 프로토콜이라고 불리며, TCP(Transmission Control Protocol)와 IP(Internet Protocol) 두 가지 프로토콜을 중심으로 구성됩니다.
+  > - Internet Protocol Suite란 인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약(프로토콜)의 모음입니다. Internet Protocol Suite 중 TCP(Transmission Control Protocol)와 IP(Internet Protocol) 프로토콜이 가장 많이 쓰이기 때문에 **TCP/IP Protocol Suite(5계층, Physical, Data Link, Internet, Transport, Application)** 라고 불립니다. (OSI 7 계층은 개념적 모델)
 
   - 근거리에서 서로 떨어진 두 전자기기가 유선/무선으로 서로 통신하는 프로토콜은 어떻게 동작할까요?
 
@@ -59,7 +59,7 @@
   > - 클라이언트는 ACK 와 SYN을 받고 서버에게 ACK 메시지 서버 전송 (연결 성립)
   > - 연결을 종료할 때는 4 Way Handshake를 사용합니다. (클라이언트 서버에게 FIN 플래그 - 서버는 클라이언트에게 ACK 패킷 - 서버가 클라이언트에게 FIN 플래그 전송 - 클라이언트는 ACK 서버에게 전송)
 
-- HTTP는 어떻게 동작할까요?
+- **HTTP는 어떻게 동작할까요?**
 
   > - HTTP(HyperText Transfer Protocol)는 인터넷 상에서 서버와 클라이언트 간에 정보(데이터)를 주고받는 통신 프로토콜입니다.
   > - HTTP는 서버/클라이언트 모델을 따릅니다. 클라이언트는 HTTP 요청 메시지를 서버에 보내고, 서버는 요청을 처리한 후에 HTTP 응답 메시지를 클라이언트에게 반환합니다.
