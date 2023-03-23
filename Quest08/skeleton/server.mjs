@@ -22,6 +22,28 @@ const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
     res.end(`Hello, ${string}\n`);
   }
+
+  if (req.method === "POST" && pathName === "/foo") {
+    let body = "";
+
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+
+    req.on("end", () => {
+      const { bar } = JSON.parse(body);
+      const message = `Hello, ${bar ? bar : "stranger"}`;
+
+      res.writeHead(200, {
+        "Content-Type": [
+          "text/plain",
+          "multipart/form-data",
+          "application/json",
+        ],
+      });
+      res.end(message);
+    });
+  }
 });
 
 server.listen(port);
