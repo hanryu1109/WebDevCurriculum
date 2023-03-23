@@ -7,18 +7,20 @@ const server = http.createServer((req, res) => {
   /* TODO: 각각의 URL들을 어떻게 처리하면 좋을까요? */
   /* createServer의 콜백함수에서 req.url 을 통해 URL을 확인하여 각각의 URL에 대응하는 응답을 처리하면 좋을 것 같습니다.  */
 
-  //   res.statusCode = 200;
-  //   res.setHeader("Content-Type", "text/plain");
-  //   res.end("Hello, World!!!\n");
-  const parsedUrl = url.parse(request.url);
+  const parsedUrl = url.parse(req.url);
   const pathName = parsedUrl.pathname;
+
+  if (req.method === "GET" && pathName === "/") {
+    res.setHeader("Content-Type", "text/plain");
+    res.end("Hello, World!!!\n");
+  }
 
   if (req.method === "GET" && pathName === "/foo") {
     const queryString = url.parse(req.url, true).query;
     const string = queryString.bar ? queryString.bar : "";
 
     res.setHeader("Content-Type", "text/html");
-    res.end(`GET method!!! ${string}\n`);
+    res.end(`Hello, ${string}\n`);
   }
 });
 
