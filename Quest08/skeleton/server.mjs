@@ -1,5 +1,7 @@
 import http from "http";
 import url from "url";
+import fs from "fs";
+import path from "path";
 
 const port = 8080;
 
@@ -13,6 +15,8 @@ const server = http.createServer((req, res) => {
   if (req.method === "GET" && pathName === "/") {
     res.setHeader("Content-Type", "text/plain");
     res.end("Hello, World!!!\n");
+
+    return;
   }
 
   if (req.method === "GET" && pathName === "/foo") {
@@ -21,6 +25,8 @@ const server = http.createServer((req, res) => {
 
     res.setHeader("Content-Type", "text/html");
     res.end(`Hello, ${string}\n`);
+
+    return;
   }
 
   if (req.method === "POST" && pathName === "/foo") {
@@ -43,7 +49,38 @@ const server = http.createServer((req, res) => {
       });
       res.end(message);
     });
+
+    return;
   }
+
+  if (req.method === "POST" && pathName === "/pic/upload") {
+    const fileName = "pic.jpg";
+    const filePath = path.join(__dirname, fileName);
+    const fileStream = fs.createWriteStream(filePath);
+
+    req.pipe(fileStream);
+    req.on("end", () => {
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("File uploaded successfully");
+    });
+
+    return;
+  }
+
+  if (req.method === "GET" && pathName === "/pic/show") {
+    const filePath = path.join(__dirname, "pic.jpg");
+    const readStream = fs.createReadStream(filePath);
+
+    readStream.pipe(res);
+    //
+  }
+
+  if (req.method === "GET" && pathName === "/pic/download") {
+    //
+  }
+
+  res.statusCode = 404;
+  res.end();
 });
 
 server.listen(port);
