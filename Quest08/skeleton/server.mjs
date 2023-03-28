@@ -8,7 +8,6 @@ const server = http.createServer((req, res) => {
   /* createServer의 콜백함수에서 req.url 을 통해 URL을 확인하여 각각의 URL에 대응하는 응답을 처리하면 좋을 것 같습니다.  */
 
   const parsedUrl = url.parse(req.url).pathname;
-  // console.log(parsedUrl);
   const parsedUrlList = parsedUrl.split("/");
   console.log(parsedUrlList);
 
@@ -22,7 +21,7 @@ const server = http.createServer((req, res) => {
   if (parsedUrlList[1] === "foo") {
     if (req.method === "GET") {
       const queryString = url.parse(req.url, true).query;
-      const string = queryString.bar ?? ""; // ??(Nullish coalescing operator, 널 병합 연산자): 널 병합 연산자는 첫 번째 연산자가 "널과 유사"한, 즉 null이거나 undefined일 때만 두 번째 피연산자를 반환합니다. ''와 0도 유효한 값이라면 널 병합 연산자가 기본 값을 나타낼 때 더 좋은 선택지입니다.
+      const string = queryString.bar || "Stranger"; // ??(Nullish coalescing operator, 널 병합 연산자): 널 병합 연산자는 첫 번째 연산자가 "널과 유사"한, 즉 null이거나 undefined일 때만 두 번째 피연산자를 반환합니다. ''와 0도 유효한 값이라면 널 병합 연산자가 기본 값을 나타낼 때 더 좋은 선택지입니다.
 
       res.setHeader("Content-Type", "text/html");
       res.end(`Hello, ${string}\n`);
