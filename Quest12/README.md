@@ -66,8 +66,9 @@
     > - 서버는 자신의 개인키를 사용하여 대칭키를 복호화하고, 이후부터는 클라이언트와 서버는 대칭키를 사용하여 데이터를 암호화하여 통신합니다.
     > - 클라이언트와 서버는 이후 통신에서 계속해서 대칭키를 사용합니다. 이때, 대칭키는 매번 새롭게 생성되지는 않습니다. 대신, 일정 주기마다 새로운 대칭키를 생성하여 보안을 유지합니다.
 <br />
-![quest12](https://user-images.githubusercontent.com/82071500/229019690-b80abfc6-6439-4f61-9063-da720a8a0b83.png)
-![Q12_공개키](https://user-images.githubusercontent.com/82071500/229019766-80aa48d8-8d91-4545-af1c-b0c6079bd8a5.png)
+<img width="1154" alt="스크린샷 2023-03-31 오전 1 44 03" src="https://user-images.githubusercontent.com/82071500/229019690-b80abfc6-6439-4f61-9063-da720a8a0b83.png">
+<br />
+<img width="1154" alt="스크린샷 2023-03-31 오전 1 44 03" src="https://user-images.githubusercontent.com/82071500/229019766-80aa48d8-8d91-4545-af1c-b0c6079bd8a5.png">
 
     > - HTTPS 역사
     > - 1994년에 Netscape Navigator 웹 브라우저를 위해 HTTPS를 개발하였습니다.
