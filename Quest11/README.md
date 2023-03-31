@@ -29,7 +29,7 @@
 - MySQL 외의 RDB에는 어떤 것들이 있나요?
   > - MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, DB2, Access, SQLite
   - Relational Database 외에 다른 DB에는 어떤 것들이 있을까요?
-    > - NoSQL: RDB가 아닌 것을 다 NoSQL로 보기도 합니다. (ex. Document 기반 MongoDB, Key-value 기반의 Redis, Graph 기반의 Neo4j)
+    > - NoSQL: RDB가 아닌 것을 다 NoSQL로 보기도 합니다. (ex. Document 기반 MongoDB, Key-value 기반의 Redis, Graph 기반의 Neo4j, Cassandra DB)
     > - TSDB(시계열 데이터 베이스): influxDB (특정 분야에만 쓰임)
 <br />
 <img width="1059" alt="스크린샷 2023-03-31 오후 3 55 47" src="https://user-images.githubusercontent.com/82071500/229046065-d59e2575-8610-4c67-a81b-812cba231fc5.png">
