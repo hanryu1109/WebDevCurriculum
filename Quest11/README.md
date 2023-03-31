@@ -29,8 +29,11 @@
 - MySQL 외의 RDB에는 어떤 것들이 있나요?
   > - MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, DB2, Access, SQLite
   - Relational Database 외에 다른 DB에는 어떤 것들이 있을까요?
-    > - NoSQL: MongoDB
-    > - TSDB(시계열 데이터 베이스): influxDB
+    > - NoSQL: RDB가 아닌 것을 다 NoSQL로 보기도 합니다. (ex. Document 기반 MongoDB, Key-value 기반의 Redis, Graph 기반의 Neo4j)
+    > - TSDB(시계열 데이터 베이스): influxDB (특정 분야에만 쓰임)
+<br />
+<img width="1059" alt="스크린샷 2023-03-31 오후 3 55 47" src="https://user-images.githubusercontent.com/82071500/229046065-d59e2575-8610-4c67-a81b-812cba231fc5.png">
+
 - RDBMS에서 테이블의 인덱싱은 무엇인가요? 인덱싱을 하면 어떤 점이 다르며, 어떤 식으로 동작하나요?
   > - 인덱싱은 검색속도를 빠르게 하기 위해 저장공간을 더 써서 인덱싱작업을 해주는 것입니다.
   > - 많이 쓰이는 인덱싱 자료구조에는 B-tree(비 트리), B+tree(비 플러스 트리)가 있습니다.
@@ -51,6 +54,9 @@
     > - Prisma
     > - TypeORM
     > - Knex
+  <br />
+  <img width="1792" alt="스크린샷 2023-03-28 오후 1 53 09" src="https://user-images.githubusercontent.com/82071500/229045790-f396ca23-83c0-4321-a572-19214df4e40c.png">
+
 - 모델간의 1:1, 1:N, N:M 관계는 각각 무엇이고 어떨 때 사용하나요?
   > - 1:1 관계 방식은 엔티티가 상대 엔티티와 단 하나의 관계를 가지는 것을 말합니다. 예를 들면, "유저" 모델과 "유저 정보" 모델로 매칭을 시킬 수 있습니다.
   > - 1:N 관계 방식은 한 엔티티가 상대 엔티티를 여러 개 가질 수 있는 것을 말합니다. 예를 들면, "회사" 모델과 "회사 소속 유저" 모델로 매칭을 시킬 수 있습니다.
