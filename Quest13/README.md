@@ -196,3 +196,4 @@
   > - 복잡한 쿼리 처리
 - GraphQL의 경쟁자에는 어떤 것이 있을까요?
   > - Odata, WSDL, gRPC
+<img width="1154" alt="스크린샷 2023-03-31 오전 1 44 03" src="https://user-images.githubusercontent.com/82071500/229039865-06a7ff36-f3f1-4bbc-b63c-035bbf5b0919.png">
