@@ -52,6 +52,7 @@
     > - 3. 희생자가 의도하지 않은 행동 실행(광고글 작성)
     > - 대응방법으로는 1.Referrer 검증 2. Security Token 사용 (A.K.A CSRF Token)이 있습니다.
     >   (\* CAPTCHA는 사용자가 직접 요청을 수행하는지 아닌지를 검사합니다.)
+<img width="1102" alt="스크린샷 2023-04-04 오후 1 29 12" src="https://user-images.githubusercontent.com/82071500/229704211-3dbf1d03-508b-425b-ac66-2d1b19c5e013.png">
 
   - SQL Injection이란 어떤 공격기법일까요?
     > - 사용자가 특정 검색어에 관한 페이지를 요청한다고 가정했을 때, 검색어에다가 SQL 구문을 주입하는 식으로 공격이 발생할 수 있습니다.
