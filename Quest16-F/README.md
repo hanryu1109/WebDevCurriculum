@@ -29,6 +29,7 @@
 
   - Vue 컴포넌트의 라이프사이클은 어떤 식으로 호출되나요?
     > - 컴포넌트 내부에 beforeCreate,created,beforeMount,mounted,beforeUpdate,updated 등의 메서드를 작성해주면 컴포넌트의 라이프사이클에 맞춰서 해당 메서드를 실행합니다.
+    ![vue lifecycle](https://user-images.githubusercontent.com/82071500/230513705-f5eee229-c992-46a9-a31d-96d59eaf41f9.png)
 
 - 컴포넌트 간에 데이터를 주고받을 때 단방향 바인딩과 양방향 바인딩 방식이 어떻게 다르고, 어떤 장단점을 가지고 있나요?
 
