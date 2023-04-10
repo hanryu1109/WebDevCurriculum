@@ -1,33 +1,50 @@
 # Quest 18-F. 프로그레시브 웹앱
 
 ## Introduction
-* 이번 퀘스트에서는 2021년 현재 웹 프론트엔드의 많은 최신 기술 중 프로그레시브 웹앱에 관해 알아보겠습니다.
+
+- 이번 퀘스트에서는 2021년 현재 웹 프론트엔드의 많은 최신 기술 중 프로그레시브 웹앱에 관해 알아보겠습니다.
 
 ## Topics
-* Progressive Web App(PWA)
-* Service Worker
-* Cache & CacheStorage API
-* Web Manifest
+
+- Progressive Web App(PWA)
+- Service Worker
+- Cache & CacheStorage API
+- Web Manifest
 
 ## Resources
-* [MDN - Progressive web apps (PWAs)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-* [MDN - Progressive web app Introduction](https://developer.mozilla.org/ko/docs/Web/Progressive_web_apps/Introduction)
-* [MDN - Service Worker API](https://developer.mozilla.org/ko/docs/Web/API/Service_Worker_API)
-* [web.dev - Progressive Web Apps](https://web.dev/progressive-web-apps/)
+
+- [MDN - Progressive web apps (PWAs)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [MDN - Progressive web app Introduction](https://developer.mozilla.org/ko/docs/Web/Progressive_web_apps/Introduction)
+- [MDN - Service Worker API](https://developer.mozilla.org/ko/docs/Web/API/Service_Worker_API)
+- [web.dev - Progressive Web Apps](https://web.dev/progressive-web-apps/)
 
 ## Checklist
-* 웹 어플리케이션을 프로그레시브 웹앱 형태로 만들면 어떤 이점을 가질까요?
-* 서비스 워커란 무엇인가요? 웹 워커와의 차이는 무엇인가요?
-* PWA의 성능을 높이기 위한 방법론에는 어떤 것들이 있고, 어떤 식으로 적용할 수 있을까요?
+
+- 웹 어플리케이션을 프로그레시브 웹앱 형태로 만들면 어떤 이점을 가질까요?
+  > - PWA는 웹 및 기본 앱 기능을 모두 활용할 수 있도록 여러 특정 기술과 표준 패턴을 사용하여 개발된 웹 앱입니다.
+  > - 앱 개발 생산성 증가: 웹 기술로 설치형 어플리케이션을 만들수 있습니다. 앱스토어 및 플레이스토어의 심사와 리뷰 과정을 거치지 않아도 됩니다. 애플리케이션을 설치하는 것보다 웹 사이트를 방문하는 것이 훨씬 쉽고 빠르며 링크를 전송하여 웹 앱을 공유할 수도 있습니다.
+  > - 웹 앱은 기본 앱보다 검색 가능성이 더 높습니다.
+  > - 서비스 워커를 활용하여 오프라인 및 저속도 네트워크 환경에서도 기능을 유지할 수 있습니다.
+- 서비스 워커란 무엇인가요? 웹 워커와의 차이는 무엇인가요?
+  > - 서비스 워커는 웹 응용 프로그램, 브라우저, 그리고 (사용 가능한 경우) 네트워크 사이의 프록시 서버 역할을 합니다. 서비스 워커의 개발 의도는 여러가지가 있지만, 그 중에서도 효과적인 오프라인 경험을 생성하고, 네트워크 요청을 가로채서 네트워크 사용 가능 여부에 따라 적절한 행동을 취하고, 서버의 자산을 업데이트할 수 있습니다. 또한 푸시 알림과 백그라운드 동기화 API로의 접근도 제공합니다.
+  > - 서비스 워커는 출처와 경로에 대해 등록하는 이벤트 기반 워커로서 JavaScript 파일의 형태를 갖고 있습니다. 서비스 워커는 연관된 웹 페이지/사이트를 통제하여 탐색과 리소스 요청을 가로채 수정하고, 리소스를 굉장히 세부적으로 캐싱할 수 있습니다. 이를 통해 웹 앱이 어떤 상황에서 어떻게 동작해야 하는지 완벽하게 바꿀 수 있습니다. (제일 대표적인 상황은 네트워크를 사용하지 못할 때입니다.)
+  > - 웹 워커 : 웹페이지 백그라운드에서 실행되는 자바스크립트 파일 입니다. - 메인 스레드와 별로도 멀티 스레딩을 통하여 작업수행을 도와줍니다.
+  > - 서비스 워커는 네트워크 요청을 처리하고, 오프라인 기능을 제공하도록 설계되었습니다. 웹 워커는 싱글 스레드인 자바스크립트의 단점을 보완하기 위해 나온 것으로 계산작업을 대신 수행시켜주는 별도의 스레드입니다. 웹 워커는 주로 무거운 연산이 소요되는 작업(AI, games, image encoding, etc)을 보조 스레드에서 실행하기 위해 사용됩니다.
+- PWA의 성능을 높이기 위한 방법론에는 어떤 것들이 있고, 어떤 식으로 적용할 수 있을까요?
+  > - 캐싱: 캐싱된 데이터는 오프라인에서도 사용이 가능하여서 빠른 로드가 가능합니다. 서비스 워커를 사용한 캐싱(별도 스레드에서 데이터 교환)을 진행하면 로딩시간 등을 절약할 수 있습니다.
+  > - 코드 번들링 최적화: 웹팩 같은 번들링 도구를 이용하여 파일 크기를 줄입니다.
+  > - 이미지 최적화: 사용되는 에셋들의 크기를 줄입니다.
 
 ## Quest
-* 텍스트 에디터 프로그램을 PWA 형태로 만들어 보세요.
-  * 필요한 에셋을 적절히 캐싱하되, 버전업이 되었을 때 캐싱을 해제할 수 있는 형태가 되어야 합니다.
-  * 해당 PWA를 데스크탑에 인스톨 가능하도록 만들어 보세요.
-  * 오프라인인 경우에는 임시저장 기능을 만들어, 온라인인 경우를 감지하여 자동으로 서버에 반영되도록 만들어 보세요.
+
+- 텍스트 에디터 프로그램을 PWA 형태로 만들어 보세요.
+  - 필요한 에셋을 적절히 캐싱하되, 버전업이 되었을 때 캐싱을 해제할 수 있는 형태가 되어야 합니다.
+  - 해당 PWA를 데스크탑에 인스톨 가능하도록 만들어 보세요.
+  - 오프라인인 경우에는 임시저장 기능을 만들어, 온라인인 경우를 감지하여 자동으로 서버에 반영되도록 만들어 보세요.
 
 ## Advanced
-* 본 퀘스트의 주제로 고려되었으나 분량상 선정되지 않은 주제들은 다음과 같습니다. 시간날 때 한 번 찾아 보세요!
-  * Search Engine Optimization(SEO)
-  * CSS-in-JS와 Styled Component
-  * Server-Side Rendering(SSR)
+
+- 본 퀘스트의 주제로 고려되었으나 분량상 선정되지 않은 주제들은 다음과 같습니다. 시간날 때 한 번 찾아 보세요!
+  - Search Engine Optimization(SEO)
+  - CSS-in-JS와 Styled Component
+  - Server-Side Rendering(SSR)
